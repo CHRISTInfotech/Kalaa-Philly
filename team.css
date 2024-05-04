@@ -20,7 +20,6 @@ body {
     flex-wrap: wrap;
     justify-content: center;
 }
-
 .img img {
     width: 30%; /* Adjust as needed */
     margin: 10px; /* Adjust spacing between images */

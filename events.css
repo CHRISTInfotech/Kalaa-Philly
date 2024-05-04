@@ -1,33 +1,41 @@
 
 /* --------Events--------- */
 
-.container2 {
-    height: 600px;
-    max-width: 1500px;
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 800px;
     margin: 0 auto;
     padding: 20px;
+    text-align: center;
+}
+
+.heading {
+    margin-bottom: 20px;
+}
+
+.img {
     display: flex;
-    justify-content: space-between;
-    background-color:white;
-
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-/* Style for event schedule */
-
-.schedule {
-    flex: 1;
+.img img {
+    width: 30%; /* Adjust as needed */
+    margin: 10px; /* Adjust spacing between images */
 }
 
-/* Style for calendar model */
-
-.calendar {
-    border: 2px solid #ccc;
-    border-radius: 8px;
-    padding: 20px;
-    height:500px;
-    width: 400px;
+@media (max-width: 768px) {
+    .img img {
+        width: 45%; /* Adjust for smaller screens */
+    }
 }
- 
+
 .content{
     float: right;
     position: absolute;
