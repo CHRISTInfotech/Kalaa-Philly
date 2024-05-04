@@ -1,0 +1,33 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.heading {
+    margin-bottom: 20px;
+}
+
+.img {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.img img {
+    width: 30%; /* Adjust as needed */
+    margin: 10px; /* Adjust spacing between images */
+}
+
+@media (max-width: 768px) {
+    .img img {
+        width: 45%; /* Adjust for smaller screens */
+    }
+}
