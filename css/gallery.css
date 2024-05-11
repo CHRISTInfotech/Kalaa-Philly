@@ -165,17 +165,3 @@ img:hover {
   }
 }
 
-/* Style footer */
-footer {
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  position: fixed;
-  bottom: 0;
-  height: 40px;
-  width: 100%;
-}
-
-footer p {
-  padding-top: 12px;
-}
