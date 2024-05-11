@@ -4,12 +4,12 @@ body {
     padding: 0;
     overflow-x: hidden;
     font-family: Arial, sans-serif;
+    height:999px
 }
 
 
 .bg-green{
-    background-color: blue;
-    
+    background-color: blue;   
 }
 .header .navbar-nav .nav-link {
     color: white; /* Change text color to white */
@@ -31,7 +31,7 @@ body {
 
 
 .header .navbar-toggler-icon {
-    background-color: white; /* Change toggler icon color */
+    background-color: white; 
 }
 
 
@@ -92,7 +92,7 @@ body {
 
 /* Dropdown content (hidden by default) */
 .dropdown-content {
-    display: none;
+    display:none;
     position: absolute;
     background-color: #8f2020;
     min-width: 160px;
@@ -100,25 +100,15 @@ body {
     z-index: 1;
 }
 
+
 .container h1{
     text-align: center;
     padding-top: 140px;
     
   }
-  
-  
-  .container p {
-    padding-top: 10px;
-    height: 120px;
-    width: 500px;
-    margin: 80px auto;
-    position: relative;
-   
-  }
-
-
-
+ 
 img {
+    
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -130,8 +120,8 @@ img:hover{
 }
 
 .img img {
-    width: 30%; /* Adjust as needed */
-    margin: 10px; /* Adjust spacing between images */
+    width: 10%; /* Adjust as needed */
+    margin: 10px; 
 }
 
 @media (max-width: 768px) {
@@ -140,12 +130,12 @@ img:hover{
     }
 }
 
-
 .content{
     float: right;
     position: absolute;
     margin-left: 900px;
 }
+
 
 /* Style for event cards */
 
@@ -183,7 +173,7 @@ img:hover{
 
 /* Style footer */
 footer {
-  
+    
     background-color: #333;
     color: #fff;
     text-align: center;

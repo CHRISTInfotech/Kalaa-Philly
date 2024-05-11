@@ -163,6 +163,10 @@ nav img {
 }
 
 
+.navbar-nav {
+    margin-right: 0.125%; 
+}
+
 /* ------About us------ */
 
 .description {
@@ -268,7 +272,7 @@ nav img {
     width: 100%;
     align-items: start;
     justify-content: space-around;
-    height: 105vh;
+    height: 120vh;
     
 }
 
