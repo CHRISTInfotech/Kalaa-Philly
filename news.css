@@ -1,23 +1,103 @@
-/* Style for the close button */
-.close-btn {
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    z-index: 1000; /* Ensure it's above other elements */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.close-btn a {
+
+.bg-green{
+    background-color: blue;
+    
+}
+.header .navbar-nav .nav-link {
+    color: white; /* Change text color to white */
+}
+
+.header .navbar-brand{
+    color: white;
+}
+.header .nav{
+    color: white;
+}
+.header .navbar-nav .nav-link[href="index.html"] {
+    color: white; /* Change text color to white */
+}
+
+.header .navbar-nav .nav-link[href="index.html"]:hover {
+    color: #f8f9fa; /* Change text color on hover */
+}
+
+
+.header .navbar-toggler-icon {
+    background-color: white; /* Change toggler icon color */
+}
+
+
+nav img {
+    width: 80px;
+}
+
+.nav-links {
+    flex: 1;
+    text-align: center;
+}
+
+.nav-links ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 2px 6px;
+    position: relative;
+}
+
+.nav-links ul li a {
+    color: black;
     text-decoration: none;
-    color: #333;
-    background-color: #fff;
-    border-radius: 50%;
-    padding: 5px;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+    font-size: 13px;
+    margin-left: 20px;
 }
 
-.close-btn a:hover {
-    background-color: #ddd;
+.nav-links ul li::after {
+    content: '';
+    width: 0%;
+    height: 3px;
+    background-color: green;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+
 }
+
+.nav-links ul li:hover::after {
+    width: 100%;
+}
+
+.text-box {
+    width: 300%;
+    color: white;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+/* Dropdown container */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    height: 18px;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #8f2020;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
 
 
 /* Style for news schedule */
@@ -28,26 +108,26 @@
 /* Style for calendar model */
 .calendar {
     border: 2px solid #ccc;
-    border-radius: 8px;
-    padding: 20px;
+    border-radius: 10px;
+    padding: 120px;
     height:500px;
-    width: 400px;
+    width: 800px;
 }
 
-/* Style footer */
+/* Updated CSS for the footer */
 footer {
+  
     background-color: #333;
     color: #fff;
-    padding: 3px;
     text-align: center;
     position: fixed;
     bottom: 0;
+    height: 40px;
     width: 100%;
-}
-
-
-.mt-5{
-    margin-top: 80px;
-}
-
+  }
+  
+  footer p{
+    padding-top: 10px;
+  
+  }
 

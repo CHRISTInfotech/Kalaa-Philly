@@ -1,66 +1,181 @@
 
-/* Style for the close button */
-.close-btn {
-  position: fixed;
-  top: 10px;
-  right: 10px;
-  z-index: 1000; /* Ensure it's above other elements */
+.bg-green {
+  background-color: blue;
 }
 
-.close-btn a {
-  text-decoration: none;
-  color: #333;
-  background-color: #fff;
-  border-radius: 50%;
-  padding: 5px;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+.header .navbar-nav .nav-link {
+  color: white; 
 }
 
-.close-btn a:hover {
-  background-color: #ddd;
+.navbar img.logo {
+  width: 85px; 
+  height: auto; 
+  justify-content: center;
+  transform: rotate(0deg); 
 }
 
+.header .navbar-brand {
+  color: white; /* Change text color */
+  padding: 0; /* Remove padding */
+}
 
+.header .navbar-brand img {
+  margin-top: -10px; /* Adjust the margin to align the logo vertically */
+  position: sticky;
+}
 
- h1{
-    text-align: center;
-    padding:40px;
-    
- }
- .gallery-item {
-    position: relative;
-    overflow: hidden;
-    padding: 20px;
-    width:fit-content;
-  }
-  .gallery-item img {
-    width: 100%;
-    height: auto;
-    transition: transform 0.3s ease;
-  }
-  .gallery-item:hover img {
-    transform: scale(1.1);
-  }
-  .gallery-caption {
-    position: absolute;
-    bottom: 5px;
-    left: 10px;
-    color: #0c0c0c;
-    background: white;
-  }
+.header .nav {
+  color: white;
+}
 
-  /* Style footer */
-footer {
-  background-color: #333;
-  color: #fff;
-  padding: 3px;
+.header .navbar-nav .nav-link[href="index.html"] {
+  color: white; /* Change text color to white */
+}
+
+.header .navbar-nav .nav-link[href="index.html"]:hover {
+  color: #f8f9fa; /* Change text color on hover */
+}
+
+.header .navbar-toggler-icon {
+  background-color: white; /* Change toggler icon color */
+}
+
+.navbar img {
+  width: 80px;
+}
+
+.nav-links {
+  flex: 1;
   text-align: center;
-  position: fixed;
-  bottom: 0;
+}
+
+.nav-links ul li {
+  list-style: none;
+  display: inline-block;
+  padding: 2px 6px;
+  position: relative;
+}
+
+.nav-links ul li a {
+  color: black;
+  text-decoration: none;
+  font-size: 13px;
+  margin-left: 20px;
+}
+
+.nav-links ul li::after {
+  content: '';
+  width: 0%;
+  height: 3px;
+  background-color: green;
+  display: block;
+  margin: auto;
+  transition: 0.5s;
+}
+
+.nav-links ul li:hover::after {
   width: 100%;
 }
 
+.text-box {
+  width: 300%;
+  color: white;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
 
-.mt-5{
-  margin-top: 80px;
+/* Dropdown container */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  height: 18px;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #8f2020;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Container styles */
+.container h1 {
+  text-align: center;
+  padding-top: 140px;
+  padding-bottom: 60px;
+}
+
+.container p {
+  padding-top: 10px;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+  height: auto;
+  width: 90%; /* Use a percentage width for responsiveness */
+  max-width: 1200px; /* Limit maximum width for larger screens */
+  margin: 0px auto;
+  position: relative;
+  display: flex; /* Use flexbox for image alignment */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  justify-content: center; /* Center images horizontally */
+}
+
+.container img {
+  height: 160px;
+  width: 160px;
+  gap: 1px;
+  margin: 5px; /* Add margin to create space between images */
+  border-radius: 50%;
+  box-shadow: 1px 1px 3px #0008;
+  transition: transform 0.4s ease-out, box-shadow 0.3s;
+}
+
+h5 {
+  text-align: center;
+  padding-top: 10px;
+}
+
+img:hover {
+  transform: scale(3);
+  /* on hover, the path gets a bit shorter & flattened & shifted to left/bottom a bit for nicer movement */
+  offset-path: path('m 5 65 q 45-0 90-0 t 90 0 90 0 90-0 90 0');
+  box-shadow: 3px 4px 10px #0006;
+  /* ensures that image gets on top of stack at the start of "popping" animation
+     and gets back at the end of getting back. With smaller value, 2 different transitions would be needed */
+  z-index: 999;
+}
+
+/* Media queries for responsive layout */
+@media (max-width: 768px) {
+  /* Adjust styles for smaller screens */
+  .container p {
+    width: 100%; /* Full width for smaller screens */
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .container img {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+/* Style footer */
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  height: 40px;
+  width: 100%;
+}
+
+footer p {
+  padding-top: 12px;
 }

@@ -2,16 +2,50 @@
     margin: 0;
     padding: 0;
     font-family: "Poppins", sans-serif;
-
     box-sizing: border-box;
 
 }
 
 .bg-green{
     background-color: blue;
-
 }
 
+.header .navbar{
+    padding: 7px;
+    row-gap: 6px;
+}
+
+.header .navbar-nav .nav-link {
+    color: white; /* Change text color to white */
+}
+
+.header .navbar-brand{
+    color: white;
+    padding: 0;
+}
+
+.header .navbar-brand img {
+    margin-top: -10px; /* Adjust the margin to align the logo vertically */
+    position: sticky;
+  }
+
+
+.header .nav{
+    color: white;
+}
+
+.header .navbar-nav .nav-link[href="index.html"] {
+    color: white; /* Change text color to white */
+}
+
+.header .navbar-nav .nav-link[href="index.html"]:hover {
+    color: #f8f9fa; /* Change text color on hover */
+}
+
+
+.header .navbar-toggler-icon {
+    background-color: white; /* Change toggler icon color */
+}
 
 nav img {
     width: 80px;
@@ -78,8 +112,6 @@ nav img {
     z-index: 1;
 }
 
-
-
 /*  image container */
 
 .image-container {
@@ -123,20 +155,15 @@ nav img {
     bottom: 20px;
     width: 500vh;
     transform: translate(-50%, -50%); /* Center the text */
-    padding: 50px; /* Add padding around the text */
+    padding: 80px; /* Add padding around the text */
     border-radius: 5px; /* Add rounded corners */
     color: white;
     text-shadow: #111111;
-    
     text-align: center; /* Center text horizontally */
 }
 
 
-
-
 /* ------About us------ */
-
-
 
 .description {
     margin-top: 10px;
@@ -270,16 +297,17 @@ nav img {
 
 /* Style footer */
 footer {
+  
     background-color: #333;
     color: #fff;
-    padding: 3px;
     text-align: center;
     position: fixed;
     bottom: 0;
+    height: 40px;
     width: 100%;
-}
-
-
-.mt-5{
-    margin-top: 80px;
-}
+  }
+  
+  footer p{
+    padding-top: 10px;
+  
+  }
