@@ -5,9 +5,25 @@
     box-sizing: border-box;
 
 }
+   html, body {
+        height: 100%;
+        margin: 0;
+    }
+
+    .carousel,
+    .carousel-inner,
+    .carousel-item,
+    .carousel-item img {
+        height: 100vh; /* Full viewport height */
+    }
+
+    .carousel-item img {
+        object-fit: cover;
+        width: 100%;
+    }
 
 .bg-green{
-    background-color: rgb(13, 13, 95);
+    background-color: rgb(46, 143, 21);
 }
 
 .header .navbar{
@@ -93,6 +109,17 @@ nav img {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+}
+.custom-gradient {
+    background: linear-gradient(90deg, #007BFF, #28A745, #FFD700); /* Blue → Green → Yellow */
+    background-size: 300% 300%;
+    animation: gradientShift 10s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 /* Dropdown container */
