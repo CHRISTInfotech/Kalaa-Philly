@@ -127,9 +127,9 @@ body::before{
     position: absolute;
     width: 300px;
     height: 300px;
-    background: linear-gradient(51deg,#62c3fc 0%, #dff0fa 80%);
+    /* background: linear-gradient(51deg,#62c3fc 0%, #dff0fa 80%);
     clip-path: circle(68.4% at 26% 31%);
-    animation: circle .8s;
+    animation: circle .8s; */
 }
 @keyframes circle {
     0%{
