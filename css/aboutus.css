@@ -1,92 +1,23 @@
-    .hero-section {
-        position: relative;
-        height: 50vh;
-        background: url('images/kala.jpg') center/cover no-repeat;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        overflow: hidden;
-    }
+.hero-section {
+    position: relative;
+    height: 60vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-    .hero-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        backdrop-filter: blur(4px);
-        background: linear-gradient(90deg, rgba(0, 123, 255, 0.4), rgba(40, 167, 69, 0.4), rgba(255, 215, 0, 0.4));
-        z-index: 1;
-    }
+.hero-section h1 {
+    font-size: 4rem;
+    z-index: 2;
+}
 
-    .hero-text {
-        position: relative;
-        z-index: 2;
-        color: white;
-        font-size: 4rem;
-        font-weight: bold;
-    }
+.about-images img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-    .about-content {
-        padding: 5rem 2rem;
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .about-images {
-        position: relative;
-        width: 300px;
-        margin-right: 2rem;
-    }
-
-    .about-images img {
-        width: 100%;
-        border-radius: 1rem;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    }
-
-    .about-images img:first-child {
-        position: relative;
-        z-index: 1;
-    }
-
-    .about-images img:last-child {
-        position: absolute;
-        top: 50%;
-        left: 20%;
-        z-index: 2;
-        width: 80%;
-    }
-
-    .about-text {
-        max-width: 500px;
-    }
-
-    .about-text h2 {
-        font-size: 2rem;
-        font-weight: bold;
-        color: #333;
-    }
-
-    .about-text p {
-        font-size: 1rem;
-        color: #555;
-    }
-
-    @media (max-width: 768px) {
-        .about-content {
-            flex-direction: column;
-        }
-
-        .about-images {
-            margin-bottom: 2rem;
-            margin-right: 0;
-        }
-
-        .about-images img:last-child {
-            left: 10%;
-        }
-    }
+.about-images img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}

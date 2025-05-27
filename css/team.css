@@ -1,159 +1,54 @@
-
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-}
-
-.bg-green{
-    background-color: white;
-}
-header p{
-    padding-bottom: 10px;
-}
-.header .navbar-nav .nav-link {
-    color: blue; /* Change text color to white */
-}
-
-.header .navbar-brand{
-    color: blue;
-    flex: -1px;   
-}
-.flex {
-    margin-bottom: 1px; /* Decrease the margin-bottom */
-  }
-  
-.header .nav{
-    color: blue;
-}
-.header .navbar-nav .nav-link[href="index.html"] {
-    color: blue; /* Change text color to white */
-}
-
-.header .navbar-nav .nav-link[href="index.html"]:hover {
-    color: blue; /* Change text color on hover */
-}
-
-
-.header .navbar-toggler-icon {
-    background-color: blue; /* Change toggler icon color */
-}
-
-
-nav img {
-    width: 120px;
-    
-}
-
-.nav-links {
-    flex: 1;
-    text-align: center;
-}
-
-.nav-links ul li {
-    list-style: none;
-    display: inline-block;
-    padding: 2px 6px;
-    position: relative;
-}
-
-.nav-links ul li a {
-    color: black;
-    text-decoration: none;
-    font-size: 13px;
-    margin-left: 20px;
-}
-
-.nav-links ul li::after {
-    content: '';
-    width: 0%;
-    height: 3px;
-    background-color: green;
-    display: block;
-    margin: auto;
-    transition: 0.5s;
-
-}
-.navbar {
-    position: absolute;
-    top: 10%; /* Adjust the distance from the previous element */
-    width: 100%; /* Make the navbar full width */
-  }
-  
-
-.nav-links ul li:hover::after {
-    width: 100%;
-}
-
-.text-box {
-    width: 300%;
-    color: white;
-    position: absolute;
-    top: 20%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-}
-
-/* Dropdown container */
-.dropdown {
-    position: relative;
-    display: inline-block;
-    height: 18px;
-}
-
-/* Dropdown content (hidden by default) */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #8f2020;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-
-/* css for team */
-
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 150px;
-    text-align: center;
+.team-section {
+    padding: 60px 20px;
+    background: none; /* Removes the grey background */
+    margin-top: 4%;
 }
 
 .heading {
-    margin-bottom: 20px;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #1d3557;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-.img {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+.team-img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 4px solid #fff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    display: block;
 }
 
-img:hover{
+.team-member:hover .team-img {
     transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
 }
 
-.img img {
-    width: 30%; /* Adjust as needed */
-    margin: 10px; /* Adjust spacing between images */
+.team-member h4 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-top: 15px;
+    font-weight: 600;
 }
 
-body::before{
-    content: "";
-    position: absolute;
-    width: 300px;
-    height: 300px;
-    /* background: linear-gradient(51deg,#258dca 0%, #dff0fa 80%);
-    clip-path: circle(68.4% at 26% 31%);
-    animation: circle .8s; */
+.team-member p {
+    font-size: 0.95rem;
+    color: #6c757d;
+    margin-bottom: 0;
 }
 
 @media (max-width: 768px) {
-    .img img {
-        width: 45%; /* Adjust for smaller screens */
+    .team-img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .heading {
+        font-size: 2rem;
     }
 }
-
