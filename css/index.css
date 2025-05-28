@@ -41,7 +41,7 @@
 }
 
 .header .navbar-brand img {
-    margin-top: -10px; /* Adjust the margin to align the logo vertically */
+    /* margin-top: -10px; Adjust the margin to align the logo vertically */
     position: sticky;
   }
 
@@ -65,6 +65,13 @@
 
 nav img {
     width: 80px;
+}
+.navbar-logo {
+    margin-top: 5%;
+    height: 100px; /* or whatever fits your navbar */
+    width: 100px; /* make sure it's equal to height */
+    object-fit: cover; /* ensures the image fills the circle */
+    border-radius: 50%; /* makes it circular */
 }
 
 .nav-links {
