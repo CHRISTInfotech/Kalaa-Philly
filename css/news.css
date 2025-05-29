@@ -9,21 +9,21 @@
     
 }
 .header .navbar-nav .nav-link {
-    color: white; /* Change text color to white */
+    color: rgb(0, 0, 0); /* Change text color to white */
 }
 
 .header .navbar-brand{
-    color: white;
+    color: rgb(0, 0, 0);
 }
 .header .nav{
-    color: white;
+    color: rgb(0, 0, 0);
 }
 .header .navbar-nav .nav-link[href="index.html"] {
-    color: white; /* Change text color to white */
+    color: rgb(0, 0, 0); /* Change text color to white */
 }
 
 .header .navbar-nav .nav-link[href="index.html"]:hover {
-    color: #f8f9fa; /* Change text color on hover */
+    color: #000000; /* Change text color on hover */
 }
 
 
@@ -31,7 +31,13 @@
     background-color: white; /* Change toggler icon color */
 }
 
-
+.navbar-logo {
+    margin-top: 5%;
+    height: 120px; /* or whatever fits your navbar */
+    width: 120px; /* make sure it's equal to height */
+   
+   
+}
 
 nav img {
     width: 80px;

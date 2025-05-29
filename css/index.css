@@ -1,7 +1,7 @@
  *{
     margin: 0;
     padding: 0;
-    font-family: "Poppins", sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     box-sizing: border-box;
 
 }
@@ -32,11 +32,11 @@
 }
 
 .header .navbar-nav .nav-link {
-    color: white; /* Change text color to white */
+    color: rgb(8, 8, 8); /* Change text color to white */
 }
 
 .header .navbar-brand{
-    color: white;
+    color: rgb(0, 0, 0);
     padding: 0;
 }
 
@@ -47,15 +47,15 @@
 
 
 .header .nav{
-    color: white;
+    color: rgb(3, 3, 3);
 }
 
 .header .navbar-nav .nav-link[href="index.html"] {
-    color: white; /* Change text color to white */
+    color: rgb(12, 12, 12); /* Change text color to white */
 }
 
 .header .navbar-nav .nav-link[href="index.html"]:hover {
-    color: #f8f9fa; /* Change text color on hover */
+    color: #000000; /* Change text color on hover */
 }
 
 
@@ -68,10 +68,10 @@ nav img {
 }
 .navbar-logo {
     margin-top: 5%;
-    height: 100px; /* or whatever fits your navbar */
-    width: 100px; /* make sure it's equal to height */
-    object-fit: cover; /* ensures the image fills the circle */
-    border-radius: 50%; /* makes it circular */
+    height: 120px; /* or whatever fits your navbar */
+    width: 120px; /* make sure it's equal to height */
+   
+   
 }
 
 .nav-links {
@@ -117,17 +117,17 @@ nav img {
     transform: translate(-50%, -50%);
     text-align: center;
 }
-.custom-gradient {
+/* .custom-gradient {
     background: linear-gradient(90deg, #007BFF, #28A745, #FFD700); /* Blue → Green → Yellow */
-    background-size: 300% 300%;
+    /* background-size: 300% 300%;
     animation: gradientShift 10s ease infinite;
-}
+} */ */
 
-@keyframes gradientShift {
+/* @keyframes gradientShift {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
-}
+} */
 
 /* Dropdown container */
 .dropdown {
@@ -248,7 +248,7 @@ nav img {
 
 .navbar {
     text-align: center;
-    background-color: rgba(14, 14, 151, 0.952) !important;
+    background-color: white !important;
 
 }
 .max-h{

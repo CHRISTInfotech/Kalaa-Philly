@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    font-family: Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;;
     height:999px
 }
 
@@ -12,21 +12,21 @@ body {
     background-color: blue;   
 }
 .header .navbar-nav .nav-link {
-    color: white; /* Change text color to white */
+    color: rgb(0, 0, 0); /* Change text color to white */
 }
 
 .header .navbar-brand{
-    color: white;
+    color:rgb(0, 0, 0);
 }
 .header .nav{
-    color: white;
+    color:rgb(0, 0, 0);
 }
 .header .navbar-nav .nav-link[href="index.html"] {
-    color: white; /* Change text color to white */
+    color:rgb(0, 0, 0); /* Change text color to white */
 }
 
 .header .navbar-nav .nav-link[href="index.html"]:hover {
-    color: #f8f9fa; /* Change text color on hover */
+    color: rgb(0, 0, 0); /* Change text color on hover */
 }
 
 

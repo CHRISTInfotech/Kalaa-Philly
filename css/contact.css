@@ -259,28 +259,42 @@ body::before{
 .container .form-area form button:hover{
     background-color: #2fa5e9;
 }
-.container .form-area .social-icons{
-    margin-top: 50px;
+.social-icons {
+    margin-top: 40px;
     display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 20px;
 }
-.container .form-area .social-icons i{
-    margin-right:  10px;
-    padding: 10px;
-    border-radius: 50%;
-    cursor: pointer;
+
+.social-icons h3 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
 }
-.container .form-area .social-icons .fa-facebook{
-    background-color: #3b5998;
-    color: #fff;
+
+.social-icons .icons {
+    display: flex;
+    gap: 15px;
 }
-.container .form-area .social-icons .fa-square-instagram{
-    background-color: #f70084ec ;
-    color: #fff;
+
+.social-icons a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
-.container .form-area .social-icons .fa-twitter{
-    background-color: #0e76a8;
-    color: #fff;
+
+.social-icons a:hover {
+    color: #f0c000; /* Mustard yellow */
+    transform: scale(1.2);
 }
+
+.social-icons i {
+    font-size: 20px;
+}
+
+
 
 @media (min-width:1200px){
     .main .container{
@@ -380,20 +394,4 @@ body::before{
   font-size: 15px;
   width: 100%;
 }
-.join-btn {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 10px 25px;
-  background-color: #fc6288;
-  color: white;
-  border: none;
-  border-radius: 30px;
-  font-size: 16px;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-  text-align: center;
-}
 
-.join-btn:hover {
-  background-color: #5ae92f;
-}
