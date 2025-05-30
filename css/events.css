@@ -185,3 +185,13 @@ img:hover{
 .card-img-top {
   transition: transform 0.3s ease; /* prepare for any future effects */
 }
+
+  .modal-content {
+    border-radius: 1rem;
+  }
+  .modal-header {
+    border-bottom: none;
+  }
+  .modal-body p {
+    margin-bottom: 0.8rem;
+  }

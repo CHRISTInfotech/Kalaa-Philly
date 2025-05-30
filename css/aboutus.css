@@ -1,3 +1,37 @@
+.header .navbar-nav .nav-link {
+    color: rgb(0, 0, 0); /* Change text color to white */  
+}
+.header .navbar-brand{
+    color: rgb(0, 0, 0);
+    flex: -1;  
+}
+.navbar-nav .nav-link {
+    margin: 0 10px; /* Adjust the margin as needed */
+}
+
+.navbar-brand {
+    margin-right: 2px; /* Adjust the margin as needed */
+}
+
+.navbar-toggler {
+    margin-left: 10px; /* Adjust the margin as needed */
+}
+
+.header .nav{
+    color: rgb(0, 0, 0);
+}
+.header .navbar-nav .nav-link[href="index.html"] {
+    color: rgb(0, 0, 0); /* Change text color to white */
+}
+
+.header .navbar-nav .nav-link[href="index.html"]:hover {
+    color: rgb(0, 0, 0); /* Change text color on hover */
+}
+
+.header .navbar-toggler-icon {
+    background-color: rgb(0, 0, 0); /* Change toggler icon color */
+}
+
 .hero-section {
     position: relative;
     height: 60vh;

@@ -14,6 +14,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+     <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
 
     <style>
         /* Custom CSS for reducing space in navbar */
@@ -41,7 +45,7 @@
                 <div class="collapse navbar-collapse justify-content-center row m-0" id="navbarSupportedContent">
                     <div class="col-12">
                         <a class="navbar-brand text-decoration-none" href="index.html">
-                            <span class="fs-1">കലാ</span> <span class="fs-3">PHILLY ASSOCIATION</span>
+                            <span class="fs-1">കലാ</span> <span class="fs-3">Malayali Association of Delaware Valley</span>
                         </a>
                     </div>
                     <div class="col-12 d-flex align-items-center justify-content-center">
@@ -58,7 +62,7 @@
                                     <a class="nav-link" href="index.html#vs">Vision & Mission</a>
                                 </li>
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown"
+                                    <a class="nav-link dropdown-toggle" href="#events" role="button" data-bs-toggle="dropdown"
                                         aria-expanded="false">
                                         Events
                                     </a>
@@ -74,7 +78,7 @@
                                     <a class="nav-link" href="team.html">Team</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="news.html">News</a>
+                                    <a class="nav-link active" href="news.html">News</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="contact.html">Contact</a>
@@ -90,18 +94,58 @@
         </nav>
     </section>
 
-    <section class="mt-5 pt-5">
+ <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1>Latest News & Updates</h1>
+      <p class="lead">Stay informed about our association's activities and announcements</p>
+    </div>
+  </section>
 
-        <div class="d-flex justify-content-center align-items-md-center mt-5">
-            <div class="">
-                <h1 class="text-center mt-3">Latest News</h1>
-                <button class="btn btn-primary" type="button" disabled>
-                    <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
-                    <span role="status">Loading...</span>
-                </button>
+  <!-- News Section -->
+  <section class="news-section">
+    <div class="container">
+      <div class="row g-4">
+
+        <!-- News Card 1 -->
+        <div class="col-md-4 fade-in">
+          <div class="card news-card">
+            <img src="https://via.placeholder.com/400x200" class="card-img-top" alt="News 1">
+            <div class="card-body">
+              <h5 class="card-title">Community Cleanup Drive</h5>
+              <p class="card-text">Our recent cleanup event brought together 100+ volunteers. Here's what happened.</p>
+              <a href="#" class="btn btn-outline-warning">Read More</a>
             </div>
+          </div>
         </div>
-    </section>
+
+        <!-- News Card 2 -->
+        <div class="col-md-4 fade-in" style="animation-delay: 0.2s;">
+          <div class="card news-card">
+            <img src="https://via.placeholder.com/400x200" class="card-img-top" alt="News 2">
+            <div class="card-body">
+              <h5 class="card-title">Annual Meeting 2025</h5>
+              <p class="card-text">Highlights from our association's annual general meeting and plans ahead.</p>
+              <a href="#" class="btn btn-outline-warning">Read More</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- News Card 3 -->
+        <div class="col-md-4 fade-in" style="animation-delay: 0.4s;">
+          <div class="card news-card">
+            <img src="https://via.placeholder.com/400x200" class="card-img-top" alt="News 3">
+            <div class="card-body">
+              <h5 class="card-title">New Member Onboarding</h5>
+              <p class="card-text">We welcomed new members this month with a special orientation session.</p>
+              <a href="#" class="btn btn-outline-warning">Read More</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
 
 
     <footer class="">
