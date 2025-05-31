@@ -33,6 +33,7 @@
 }
 
 .hero-section {
+    margin-top: 2%;
     position: relative;
     height: 60vh;
     background-size: cover;
