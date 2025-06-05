@@ -272,8 +272,7 @@ nav img {
     align-items: start;
     justify-content: space-around;
     height: 95vh;
-    text-align: center;
-    
+    text-align: center;    
 }
 
 .desc h1 {
@@ -290,7 +289,6 @@ nav img {
     color:black;
     text-align: left;
     flex: 1;
-
 }
 
 
@@ -301,8 +299,7 @@ nav img {
     width: 100%;
     align-items: start;
     justify-content: space-around;
-    height: 120vh;
-    
+    height: 120vh;    
 }
 
 .Vision-Mission > div {

@@ -101,33 +101,44 @@
                 Venue: Community Hall, 123 Main St, Philadelphia, PA
               </p>
               <div class="text-center">
-                <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#onamModal">Details</button>
+                <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#onamModal">Register</button>
               </div>
             </div>
           </div>
         </div>
-
         <!-- Modal -->
         <div class="modal fade" id="onamModal" tabindex="-1" aria-labelledby="onamModalLabel" aria-hidden="true">
-         <div class="modal-dialog modal-fullscreen modal-dialog-centered">
+          <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
               <div class="modal-header">
                 <h5 class="modal-title fw-bold" id="onamModalLabel">Onam Celebration - Event Details</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
-                <img src="images/image.png" class="img-fluid rounded mb-3" alt="Onam Event Image">
-                <p>
-                  Join us for a vibrant Onam celebration featuring traditional Kerala cuisine, cultural performances,
-                  games, and activities for all ages.
-                  <br><br>
-                  📅 <strong>Date:</strong> 15th September 2024<br>
-                  📍 <strong>Venue:</strong> Community Hall, 123 Main St, Philadelphia, PA
-                </p>
-                <p>
-                  This event brings together the community in a colorful and joyous atmosphere. Traditional attire is
-                  encouraged.
-                </p>
+                <div class="row align-items-center">
+                  <!-- Image Column -->
+                  <div class="col-md-5 mb-3 mb-md-0 text-center">
+                    <img src="images/image.png" alt="Onam Event" class="img-fluid rounded" style="max-width: 100%;" />
+                  </div>
+
+                  <!-- Text Column -->
+                  <div class="col-md-7">
+                    <p>
+                      Join us for a vibrant Onam celebration featuring traditional Kerala cuisine, cultural
+                      performances,
+                      games, and activities for all ages.
+                    </p>
+                    <p>
+                      📅 <strong>Date:</strong> 15th September 2024<br>
+                      📍 <strong>Venue:</strong> Community Hall, 123 Main St, Philadelphia, PA
+                    </p>
+                    <p>
+                      This event brings together the community in a colorful and joyous atmosphere. Traditional attire
+                      is
+                      encouraged.
+                    </p>
+                  </div>
+                </div>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -135,6 +146,7 @@
             </div>
           </div>
         </div>
+
 
         <!-- Event Card 2 -->
         <div class="col-md-6 col-lg-4">
