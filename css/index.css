@@ -37,10 +37,24 @@
 }
 .navbar-nav .nav-link {
     margin: 0 10px; /* Adjust the margin as needed */
+     color: rgb(0, 0, 0); /* base color */
+    font-weight: 600;
+    transition: all 0.3s ease; /* smooth hover effect */
+    position: relative;
 }
+
+/* Hover effect */
+.navbar-nav .nav-link:hover {
+    background-color: #fceabb;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+
 
 .navbar-brand {
     margin-right: 2px; /* Adjust the margin as needed */
+    font-weight: bold;
 }
 
 .navbar-toggler {
@@ -61,6 +75,11 @@
 
 .header .navbar-toggler-icon {
     background-color: rgb(0, 0, 0); /* Change toggler icon color */
+}
+.kala-brand {
+   
+    font-size: 1.5rem; /* or use fs-2 from Bootstrap */
+    font-family: 'Noto Sans', 'Segoe UI', sans-serif; /* Noto supports Malayalam + English */
 }
 
 

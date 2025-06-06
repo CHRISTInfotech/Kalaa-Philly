@@ -131,14 +131,7 @@ body::before{
     clip-path: circle(68.4% at 26% 31%);
     animation: circle .8s; */
 }
-@keyframes circle {
-    0%{
-        margin-top: -100%;
-    }
-    100%{
-        margin-top: 0;
-    }
-}
+
 .container{
     width: 80%;
     height: 40vh;
@@ -150,14 +143,8 @@ body::before{
     border-radius: 5px;
     animation: container 1.5s ease;
 }
-@keyframes container {
-    0%{
-        margin-top: -100%;
-    }
-    100%{
-        top: 0;
-    }
-}
+
+
 .container .image{
     width: 80%;
     height: 150vh;
@@ -187,20 +174,14 @@ body::before{
     align-items: center;
     animation: form 1.8s ease;
 }
-@keyframes form {
-    0%{
-        margin-left: 500px;
-    }
-    100%{
-        left: 0;
-    }
-}
+
+
 .container .form-area h2{
     font-size: 30px;
     font-family: Arial, Helvetica, sans-serif;
 }
 .container .form-area form{
-    width: 60%;
+    width: 80%;   /* width of contact form field */
     display: flex;
     flex-direction: column;
     margin-top: 30px;
@@ -226,14 +207,8 @@ body::before{
     border-bottom: 1px solid #62c3fc;
     animation: border .5s ease;
 }
-@keyframes border {
-    0%{
-        width: 0%;
-    }
-    100%{
-        width: 100%;
-    }
-}
+
+
 .container .form-area form textarea{
     border: none;
     border-bottom: 1px solid #ddd;
