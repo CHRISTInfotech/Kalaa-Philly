@@ -1,160 +1,116 @@
-/* Apply to the entire body to center content */
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;;
-  background: linear-gradient(135deg, #f5f5f5, #e0f7fa);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh; /* Ensure full viewport height */
-}
-
-/* Wrapper with no need for internal spacing */
-.membership-wrapper {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Box containing the form */
-.membership-box {
-  padding: 40px;
-  background: white;
-  border-radius: 16px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
-  width: 90%;
-  max-width: 500px;
-  text-align: center;
-}
-
-
-.membership-box h1 {
-  color: #00796b;
-  margin-bottom: 10px;
-}
-
-.membership-box p {
-  color: #555;
-  margin-bottom: 25px;
-}
-
-form input, form textarea {
-  width: 100%;
-  padding: 12px 14px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 1em;
-}
-
-form button {
-  width: 100%;
-  padding: 12px;
-  background-color: #00796b;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-size: 1.1em;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-form button:hover {
-  background-color: #004d40;
-}
-        :root {
+/* Membership Page Styles */
+         :root {
             --primary-color: #2c5aa0;
             --secondary-color: #f8d7da;
             --accent-color: #28a745;
             --text-dark: #333;
             --text-light: #666;
+            --gradient-primary: linear-gradient(135deg, #2c5aa0 0%, #1e3a6f 100%);
+            --gradient-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
 
-        body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
+.header .navbar-nav .nav-link {
+    color: rgb(0, 0, 0); /* Change text color to white */  
+}
+.header .navbar-brand{
+    color: rgb(0, 0, 0);
+    flex: -1;  
+}
+.navbar-nav .nav-link {
+    margin: 0 10px; /* Adjust the margin as needed */
+}
+
+.navbar-brand {
+    margin-right: 2px; /* Adjust the margin as needed */
+}
+
+.navbar-toggler {
+    margin-left: 10px; /* Adjust the margin as needed */
+}
+
+.header .nav{
+    color: rgb(0, 0, 0);
+}
+.header .navbar-nav .nav-link[href="index.html"] {
+    color: rgb(0, 0, 0); /* Change text color to white */
+}
+
+.header .navbar-nav .nav-link[href="index.html"]:hover {
+    color: rgb(0, 0, 0); /* Change text color on hover */
+}
+
+.header .navbar-toggler-icon {
+    background-color: rgb(0, 0, 0); /* Change toggler icon color */
+}
+
+        /* Main Content */
+        .main-content {
+            margin-top: 80px;
+            padding-top: 20px;
         }
 
-        .custom-gradient {
-            background: linear-gradient(90deg, #2c5aa0 0%, #1e3a6f 100%);
-        }
-
-        .navbar-logo {
-            height: 50px;
-            width: auto;
-        }
-
-        .navbar-brand span {
-            color: white;
-            font-weight: bold;
-        }
-
-        .nav-link {
-            color: white !important;
-            font-weight: 500;
-            margin: 0 10px;
-            transition: all 0.3s ease;
-        }
-
-        .nav-link:hover,
-        .nav-link.active {
-            color: #ffd700 !important;
-            transform: translateY(-2px);
-        }
-
+        /* Hero Section */
         .membership-hero {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23667eea" width="1200" height="800"/><circle fill="%23764ba2" cx="200" cy="200" r="100" opacity="0.3"/><circle fill="%23667eea" cx="800" cy="400" r="150" opacity="0.2"/><circle fill="%23764ba2" cx="1000" cy="600" r="80" opacity="0.4"/></svg>');
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23667eea" width="1200" height="800"/><circle fill="%23764ba2" cx="200" cy="200" r="100" opacity="0.3"/><circle fill="%23667eea" cx="800" cy="400" r="150" opacity="0.2"/><circle fill="%23764ba2" cx="1000" cy="600" r="80" opacity="0.4"/></svg>');
             background-size: cover;
             background-position: center;
             color: white;
-            padding: 120px 0 80px;
-            margin-top: 80px;
+            padding: 100px 0 80px;
+            position: relative;
+            overflow: hidden;
         }
 
         .hero-content {
             text-align: center;
             max-width: 800px;
             margin: 0 auto;
+            position: relative;
+            z-index: 2;
         }
 
         .hero-title {
+            margin-top: 65px;
             font-size: 3.5rem;
             font-weight: bold;
             margin-bottom: 20px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            animation: fadeInUp 1s ease-out;
         }
 
         .hero-subtitle {
             font-size: 1.3rem;
             margin-bottom: 30px;
             opacity: 0.9;
+            line-height: 1.6;
+            animation: fadeInUp 1s ease-out 0.2s both;
         }
 
+        /* Membership Information */
         .membership-info {
             background: white;
             border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            padding: 60px 40px;
-            margin: -40px 20px 60px;
+            box-shadow: 0 20px 0px rgba(0,0,0,0.1);
+            padding: 80px 40px;
+            margin: 0px 20px 10px;
             position: relative;
-            z-index: 2;
+            
         }
 
         .info-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 40px;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
         }
 
         .info-card {
             text-align: center;
             padding: 30px 20px;
             border-radius: 15px;
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+          
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.05);
         }
 
         .info-card:hover {
@@ -180,26 +136,36 @@ form button:hover {
             line-height: 1.6;
         }
 
+        /* Membership Rates */
         .membership-rates {
-            background: linear-gradient(135deg, #2c5aa0 0%, #1e3a6f 100%);
+            background: var(--gradient-primary);
             color: white;
             padding: 40px;
             border-radius: 15px;
             margin: 40px 0;
+            box-shadow: 0 10px 25px rgba(44, 90, 160, 0.3);
         }
 
         .rates-title {
             text-align: center;
             font-size: 2rem;
             margin-bottom: 30px;
+            font-weight: bold;
         }
 
         .rate-item {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 0;
+            padding: 20px 0;
             border-bottom: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .rate-item:hover {
+            background: rgba(112, 247, 1, 0.1);
+            border-radius: 8px;
+            padding: 20px 15px;
         }
 
         .rate-item:last-child {
@@ -208,14 +174,16 @@ form button:hover {
 
         .rate-type {
             font-weight: 500;
+            font-size: 1.1rem;
         }
 
         .rate-price {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             font-weight: bold;
             color: #ffd700;
         }
 
+        /* Buttons */
         .join-btn {
             background: linear-gradient(135deg, var(--accent-color) 0%, #218838 100%);
             border: none;
@@ -228,7 +196,8 @@ form button:hover {
             transition: all 0.3s ease;
             display: block;
             margin: 40px auto;
-            box-shadow: 0 10px 20px rgba(40, 167, 69, 0.3);
+            box-shadow: 0 5px 5px rgba(40, 167, 69, 0.3);
+            margin-bottom: 60px;
         }
 
         .join-btn:hover {
@@ -236,124 +205,252 @@ form button:hover {
             box-shadow: 0 15px 30px rgba(40, 167, 69, 0.4);
         }
 
+        /* Membership Form */
         .membership-form {
             display: none;
             background: white;
             border-radius: 20px;
-            padding: 40px;
-            margin: 40px 20px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            padding: 50px 40px;
+            margin: 60px 20px;
+            box-shadow: 0 20px 0px rgba(0,0,0,0.1);
         }
 
         .form-section {
-            margin-bottom: 30px;
+            margin-bottom: 40px;
         }
 
         .section-title {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             font-weight: bold;
             color: var(--primary-color);
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             padding-bottom: 10px;
-            border-bottom: 2px solid var(--secondary-color);
+            border-bottom: 3px solid var(--primary-color);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 60px;
+            height: 3px;
         }
 
         .form-control {
             border-radius: 10px;
             border: 2px solid #e9ecef;
-            padding: 12px 15px;
-            margin-bottom: 15px;
-            transition: border-color 0.3s ease;
+            padding: 15px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+            font-size: 1rem;
         }
 
         .form-control:focus {
             border-color: var(--primary-color);
-            box-shadow: 0 0 0 0.2rem rgba(44, 90, 160, 0.25);
+            box-shadow: 0 0 0 0.25rem rgba(44, 90, 160, 0.25);
+            outline: none;
         }
 
         .children-section {
-            border: 2px dashed #dee2e6;
-            border-radius: 10px;
-            padding: 20px;
-            margin: 20px 0;
+            border-radius: 15px;
+            margin: 25px 0;
+            background: #f8f9fa;
         }
 
         .child-entry {
-            background: #f8f9fa;
+            background: white;
             border-radius: 10px;
-            padding: 15px;
-            margin-bottom: 15px;
-            border-left: 4px solid var(--primary-color);
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: relative;
         }
 
         .btn-add-child {
             background: var(--primary-color);
             color: white;
             border: none;
-            padding: 8px 15px;
-            border-radius: 5px;
+            padding: 12px 20px;
+            border-radius: 8px;
             cursor: pointer;
-            margin-top: 10px;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .btn-add-child:hover {
+            background: #1e3a6f;
+            transform: translateY(-2px);
         }
 
         .btn-remove-child {
             background: #dc3545;
             color: white;
             border: none;
-            padding: 5px 10px;
-            border-radius: 3px;
+            padding: 4px 10px;
+            border-radius: 8px;
             cursor: pointer;
-            float: right;
+            position: absolute;
+            bottom: 4;
+            right: 15px;
+            
+        }
+
+        .btn-remove-child:hover {
+            background: #c82333;
         }
 
         .submit-btn {
-            background: linear-gradient(135deg, var(--primary-color) 0%, #1e3a6f 100%);
+            background: var(--gradient-primary);
             border: none;
-            color: white;
-            padding: 15px 40px;
-            font-size: 1.1rem;
+            color: green;
+            padding: 18px 40px;
+            font-size: 1.2rem;
             font-weight: bold;
-            border-radius: 10px;
+            border-radius: 12px;
             cursor: pointer;
             width: 100%;
-            margin-top: 20px;
+            margin-top: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(44, 90, 160, 0.3);
+            margin-bottom: 100px;
         }
 
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(44, 90, 160, 0.4);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+
+        /* Success Message */
         .success-message {
             display: none;
             background: linear-gradient(135deg, var(--accent-color) 0%, #218838 100%);
             color: white;
-            padding: 30px;
-            border-radius: 15px;
+            padding: 50px 30px;
+            border-radius: 20px;
             text-align: center;
-            margin: 20px;
-            box-shadow: 0 10px 20px rgba(40, 167, 69, 0.3);
+            margin: 60px 20px;
+            box-shadow: 0 15px 35px rgba(40, 167, 69, 0.3);
         }
 
         .success-icon {
             font-size: 4rem;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            animation: bounceIn 1s ease-out;
         }
 
+        .success-message h3 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .success-message p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 25px;
+        }
+
+        /* Footer */
         footer {
-            background: #2c5aa0;
+            background: var(--primary-color);
             color: white;
             text-align: center;
-            padding: 20px 0;
+            padding: 30px 0;
+            margin-top: 60px;
         }
 
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounceIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.3);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.05);
+            }
+            70% {
+                transform: scale(0.9);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Responsive Design */
         @media (max-width: 768px) {
+            .main-content {
+                margin-top: 70px;
+            }
+            
             .hero-title {
                 font-size: 2.5rem;
             }
             
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
             .membership-info {
                 margin: -20px 10px 40px;
-                padding: 40px 20px;
+                padding: 40px 25px;
+            }
+            
+            .membership-form {
+                margin: 40px 10px;
+                padding: 30px 20px;
             }
             
             .info-grid {
                 grid-template-columns: 1fr;
-                gap: 20px;
+                gap: 25px;
+            }
+            
+            .rate-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            
+            .child-entry {
+                padding: 15px;
+            }
+            
+            .btn-remove-child {
+                position: static;
+                margin-bottom: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .membership-rates {
+                padding: 25px 20px;
+            }
+            
+            .rates-title {
+                font-size: 1.5rem;
             }
         }

@@ -162,8 +162,9 @@ body::before{
 }
 .container .image img{
     margin-left: 100px;
+    position: relative;
     height: 400px;
-    z-index: 1;
+   
     box-shadow: black;
 }
 .container .form-area{
