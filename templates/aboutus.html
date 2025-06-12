@@ -5,9 +5,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About Us</title>
-    <link rel="stylesheet" href="css/index.css" />
-    <link rel="stylesheet" href="css/aboutus.css" />
-    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="/static/css/index.css" />
+    <link rel="stylesheet" href="/static/css/aboutus.css" />
+    <link rel="stylesheet" href="/static/css/footer.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
@@ -23,7 +23,7 @@
             <div class="container-fluid">
                 <!-- Logo -->
                 <a class="navbar-brand text-decoration-none" href="index.html">
-                    <img src="images/kalaa logo.jpg" alt="Logo" class="navbar-logo">
+                    <img src="/static/images/kalaa logo.jpg" alt="Logo" class="navbar-logo">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -33,20 +33,18 @@
                 <div class="collapse navbar-collapse justify-content-center row m-0" id="navbarSupportedContent">
                     <div class="col-12 text-center">
                         <a class="navbar-brand text-decoration-none" href="index.html">
-                            <span class="fs-1">കലാ</span> <span class="fs-3">Malayali Association of Delaware
-                                Valley</span>
+                            <span class="fs-1">കലാ</span> <span class="fs-3">Malayali Association of Delaware Valley</span>
                         </a>
                     </div>
                     <div class="col-12 d-flex align-items-center justify-content-center">
                         <div class="navbar-brand">
-                            <ul class="navbar-nav mb-2 mb-lg-0  ">
-                                <li class="nav-item ">
+                            <ul class="navbar-nav mb-2 mb-lg-0">
+                                <li class="nav-item">
                                     <a class="nav-link" aria-current="page" href="index.html">Home</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link active" href="aboutus.html">About Us</a>
                                 </li>
-
                                 <li class="nav-item">
                                     <a class="nav-link" href="index.html#vs">Vision & Mission</a>
                                 </li>
@@ -83,18 +81,12 @@
         </nav>
     </section>
 
-
-
-
     <!-- Hero Section -->
-
-    <section class="hero-section" style="background: url('images/group.png') center center / cover no-repeat;">
+    <section class="hero-section">
         <div class="hero-content">
             <h1>About Us</h1>
         </div>
     </section>
-
-
 
     <!-- Main Content -->
     <div class="main-content">
@@ -106,10 +98,9 @@
                         <!-- Image -->
                         <div class="col-lg-6">
                             <div class="about-image-wrapper">
-                                <img src="images/image copy.png" class="img-fluid" alt="Our Team"
-                                    onerror="this.src='data:image/svg+xml,&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;600&quot; height=&quot;400&quot; viewBox=&quot;0 0 600 400&quot;&gt;&lt;rect width=&quot;100%&quot; height=&quot;100%&quot; fill=&quot;%23e2e8f0&quot;/&gt;&lt;text x=&quot;50%&quot; y=&quot;50%&quot; font-family=&quot;Arial&quot; font-size=&quot;24&quot; fill=&quot;%234a5568&quot; text-anchor=&quot;middle&quot; dy=&quot;.3em&quot;&gt;Image not found&lt;/text&gt;&lt;/svg&gt;'" />
+                                <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                                     class="img-fluid" alt="Our Team" />
                             </div>
-
                         </div>
 
                         <!-- Text Content -->
@@ -134,17 +125,13 @@
         </section>
     </div>
 
+    <!-- FIXED FOOTER -->
+        <footer class="">
+            <div class="p-3">
+                &copy; 2024 CHRIST INFOTECH. All rights reserved.
+            </div>
+        </footer>
 
-    <footer class="">
-        <div class="p-3">
-            &copy; 2024 My Website. All rights reserved.
-        </div>
-    </footer>
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
-        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
-        crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -194,7 +181,6 @@
             });
         });
     </script>
-
 </body>
 
 </html>

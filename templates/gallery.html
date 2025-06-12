@@ -8,9 +8,9 @@
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/gallery.css">
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="/static/css/gallery.css">
+    <link rel="stylesheet" href="/static/css/index.css">
+    <link rel="stylesheet" href="/static/css/footer.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
@@ -34,7 +34,7 @@
             <div class="container-fluid">
                 <!-- Logo -->
                 <a class="navbar-brand text-decoration-none" href="index.html">
-                     <img src="images/kalaa logo.jpg" alt="Logo" class="navbar-logo">
+                     <img src="/static/images/kalaa logo.jpg" alt="Logo" class="navbar-logo">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -99,22 +99,22 @@
         <div class="gallery-grid">
             <section class="event" data-images="kerala-culture.jpg,gallery3.jpg,gallery4.jpg,pulikali.jpeg">
                 <h5 class="event-title">Onam Celebration</h5>
-                <img src="images/onam.jpeg" alt="Onam" class="main-img" onclick="openGallery(this)">
+                <img src="/static/images/onam.jpeg" alt="Onam" class="main-img" onclick="openGallery(this)">
             </section>
 
             <section class="event" data-images="cake.jpeg,xmas 2.jpeg,santa.jpeg,star.jpeg">
                 <h5 class="event-title">X-mas Celebration</h5>
-                <img src="images/xmas image.jpg" alt="Xmas" class="main-img" onclick="openGallery(this)">
+                <img src="/static/images/xmas image.jpg" alt="Xmas" class="main-img" onclick="openGallery(this)">
             </section>
 
             <section class="event" data-images="kannikonna.jpeg,vishu 1.jpeg,katta.jpeg,vishu 3.jpeg">
                 <h5 class="event-title">Vishu Celebration</h5>
-                <img src="images/vishu.jpeg" alt="Vishu" class="main-img" onclick="openGallery(this)">
+                <img src="/static/images/vishu.jpeg" alt="Vishu" class="main-img" onclick="openGallery(this)">
             </section>
 
             <section class="event" data-images="eid 1.jpeg,eid 2.jpeg,eid.jpeg,eid 3.jpg">
                 <h5 class="event-title">Eid Celebration</h5>
-                <img src="images/eid.jpeg" alt="Vishu" class="main-img" onclick="openGallery(this)">
+                <img src="/static/images/eid.jpeg" alt="Vishu" class="main-img" onclick="openGallery(this)">
             </section>
 
             <!-- Add more events here if needed -->
@@ -137,7 +137,7 @@
 
     <footer class="">
         <div class="p-3">
-            &copy; 2024 My Website. All rights reserved.
+            &copy;  2024 CHRIST INFOTECH. All rights reserved.
         </div>
     </footer>
 
@@ -160,7 +160,7 @@
 
             imageList.forEach(imgName => {
                 const img = document.createElement('img');
-                img.src = 'images/' + imgName;
+                img.src = '/static/images/' + imgName;
                 img.alt = 'Gallery image';
                 img.onclick = () => openFullscreen(img.src);
                 popupImagesDiv.appendChild(img);
