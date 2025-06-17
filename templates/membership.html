@@ -169,7 +169,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-6">
-                            <input type="email" class="form-control" name="email" placeholder="Email Address" required>
+                            <input type="email" class="form-control" name="email" placeholder="Email Address" autocomplete="email" required>
                         </div>
                         <div class="col-md-6">
                             <input type="tel" class="form-control" name="phone" placeholder="Phone Number" required>
@@ -249,89 +249,163 @@
         crossorigin="anonymous"></script>
 
     <script>
+        // Function to show membership form
         function showMembershipForm() {
-            document.querySelector('.membership-info').style.display = 'none';
-            document.getElementById('membershipForm').style.display = 'block';
-            document.getElementById('membershipForm').scrollIntoView({ behavior: 'smooth' });
+            const membershipInfo = document.querySelector('.membership-info');
+            const membershipForm = document.getElementById('membershipForm');
+
+            if (membershipInfo) membershipInfo.style.display = 'none';
+            if (membershipForm) {
+                membershipForm.style.display = 'block';
+                membershipForm.scrollIntoView({ behavior: 'smooth' });
+            }
         }
 
+
+        // Function to add child entry
         function addChild() {
             const childrenSection = document.getElementById('childrenSection');
+            if (!childrenSection) {
+                console.error('Children section not found');
+                return;
+            }
+
             const childEntry = document.createElement('div');
             const childId = Date.now(); // Unique ID for each child entry
-            childEntry.className = 'child-entry';
+            childEntry.className = 'child-entry mb-3 p-3 border rounded';
             childEntry.setAttribute('data-child-id', childId);
             childEntry.innerHTML = `
-       <button type="button" class="btn-remove-child" onclick="removeChildEntry(${childId})">
-           <i class="fas fa-times"></i> Remove
-       </button>
-       <div class="row">
-           <div class="col-md-4">
-               <input type="text" class="form-control" name="child_name[]" placeholder="Child's Name">
-           </div>
-           <div class="col-md-4">
-               <input type="date" class="form-control" name="child_dob[]" placeholder="Date of Birth">
-           </div>
-           <div class="col-md-4">
-               <select class="form-control" name="child_sex[]">
-                   <option value="">Select Gender</option>
-                   <option value="Male">Male</option>
-                   <option value="Female">Female</option>
-               </select>
-           </div>
-       </div>
-   `;
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <h6 class="mb-0">Child Information</h6>
+                <button type="button" class="btn btn-sm btn-danger" onclick="removeChildEntry(${childId})">
+                    <i class="fas fa-times"></i> Remove
+                </button>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-2">
+                    <label class="form-label">Child's Name *</label>
+                    <input type="text" class="form-control" name="child_name[]" placeholder="Enter child's name" required>
+                </div>
+                <div class="col-md-4 mb-2">
+                    <label class="form-label">Date of Birth</label>
+                    <input type="date" class="form-control" name="child_dob[]">
+                </div>
+                <div class="col-md-4 mb-2">
+                    <label class="form-label">Gender</label>
+                    <select class="form-control" name="child_sex[]">
+                        <option value="">Select Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </div>
+            </div>
+        `;
             childrenSection.appendChild(childEntry);
         }
 
+        // Function to remove child entry
         function removeChildEntry(childId) {
             const childEntry = document.querySelector(`[data-child-id="${childId}"]`);
             if (childEntry) {
                 childEntry.remove();
+            } else {
+                console.log(`Child entry with ID ${childId} not found.`);
             }
         }
+
+        // Function to reset form
         function resetForm() {
-            document.getElementById('membershipApplicationForm').reset();
-            document.getElementById('successMessage').style.display = 'none';
-            document.querySelector('.membership-info').style.display = 'block';
-            document.getElementById('membershipForm').style.display = 'none';
+            const form = document.getElementById('membershipApplicationForm');
+            const successMessage = document.getElementById('successMessage');
+            const membershipInfo = document.querySelector('.membership-info');
+            const membershipForm = document.getElementById('membershipForm');
+
+            if (form) form.reset();
+            if (successMessage) successMessage.style.display = 'none';
+            if (membershipInfo) membershipInfo.style.display = 'block';
+            if (membershipForm) membershipForm.style.display = 'none';
+
+            // Remove all child entries except the first one (if any)
+            const childrenSection = document.getElementById('childrenSection');
+            if (childrenSection) {
+                const childEntries = childrenSection.querySelectorAll('.child-entry');
+                childEntries.forEach(entry => entry.remove());
+            }
+
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        document.getElementById('membershipApplicationForm').addEventListener('submit', function (e) {
-            e.preventDefault();
+        // Function to show loading state
+        function setLoadingState(button, isLoading) {
+            if (isLoading) {
+                button.dataset.originalText = button.innerHTML;
+                button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
+                button.disabled = true;
+            } else {
+                button.innerHTML = button.dataset.originalText || 'Submit Application';
+                button.disabled = false;
+            }
+        }
 
-            const submitBtn = document.querySelector('.submit-btn');
-            const originalText = submitBtn.innerHTML;
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
-            submitBtn.disabled = true;
+        // Function to show success message
+        function showSuccessMessage(message) {
+            const membershipForm = document.getElementById('membershipForm');
+            const successMessage = document.getElementById('successMessage');
 
-            const formData = new FormData(this);
+            if (membershipForm) membershipForm.style.display = 'none';
 
-            fetch('/submit_membership', {
-                method: 'POST',
-                body: formData
-            })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.success) {
-                        document.getElementById('membershipForm').style.display = 'none';
-                        document.getElementById('successMessage').style.display = 'block';
-                        document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth' });
-                    } else {
-                        alert('Error: ' + data.message);
-                    }
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                    alert('An error occurred while submitting the form. Please try again.');
-                })
-                .finally(() => {
-                    submitBtn.innerHTML = originalText;
-                    submitBtn.disabled = false;
-                });
-        });
+            if (successMessage) {
+                // Update message if element exists
+                const messageText = successMessage.querySelector('.success-text') || successMessage;
+                messageText.textContent = message;
+                successMessage.style.display = 'block';
+                successMessage.scrollIntoView({ behavior: 'smooth' });
+            } else {
+                // Create success message if it doesn't exist
+                const successDiv = document.createElement('div');
+                successDiv.id = 'successMessage';
+                successDiv.className = 'alert alert-success mt-4';
+                successDiv.innerHTML = `
+                <div class="text-center">
+                    <i class="fas fa-check-circle fa-3x text-success mb-3"></i>
+                    <h4>Application Submitted Successfully!</h4>
+                    <p class="success-text">${message}</p>
+                    <button type="button" class="btn btn-primary mt-3" onclick="resetForm()">
+                        Submit Another Application
+                    </button>
+                </div>
+            `;
+
+                const container = document.querySelector('.container') || document.body;
+                container.appendChild(successDiv);
+                successDiv.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Function to show error message
+        function showErrorMessage(message) {
+            // Remove existing error messages
+            const existingErrors = document.querySelectorAll('.alert-danger.dynamic-error');
+            existingErrors.forEach(error => error.remove());
+
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'alert alert-danger dynamic-error mt-3';
+            errorDiv.innerHTML = `
+            <i class="fas fa-exclamation-triangle me-2"></i>
+            ${message}
+        `;
+
+            const form = document.getElementById('membershipApplicationForm');
+            if (form) {
+                form.prepend(errorDiv);
+                errorDiv.scrollIntoView({ behavior: 'smooth' });
+            } else {
+                console.warn('Form element not found to show error.');
+                document.body.prepend(errorDiv);
+            }
+        }
     </script>
+
 
 </body>
 
