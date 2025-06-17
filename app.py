@@ -2,14 +2,166 @@ from flask import Flask, request, jsonify, send_from_directory
 from datetime import datetime
 import os
 import json
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+from email.mime.base import MIMEBase
+from email import encoders
 
 app = Flask(__name__, static_folder='.', static_url_path='')
 app.secret_key = 'your-secret-key-here'  # Change this to a secure secret key
+
+# Email Configuration - UPDATE THESE WITH YOUR DETAILS
+EMAIL_CONFIG = {
+    'smtp_server': 'smtp.gmail.com',  # For Gmail
+    'smtp_port': 587,
+    'sender_email': 'your-community-email@gmail.com',  # Your community email
+    'sender_password': 'your-app-password',  # Gmail App Password (not regular password)
+    'admin_email': 'admin@kalaa-community.com'  # Where to receive membership applications
+}
 
 # Directory to store membership applications
 DATA_DIR = 'membership_data'
 if not os.path.exists(DATA_DIR):
     os.makedirs(DATA_DIR)
+
+def send_email_notification(membership_data, json_filepath):
+    """
+    Send email notification to admin when new membership is submitted
+    """
+    try:
+        # Create message
+        msg = MIMEMultipart()
+        msg['From'] = EMAIL_CONFIG['sender_email']
+        msg['To'] = EMAIL_CONFIG['admin_email']
+        msg['Subject'] = f"New KALAA Membership Application - {membership_data['name']}"
+        
+        # Create email body
+        body = f"""
+        New Membership Application Received
+        ==================================
+        
+        Submission Date: {membership_data['submission_date']}
+        Name: {membership_data['name']}
+        Spouse Name: {membership_data.get('spouse_name', 'N/A')}
+        Email: {membership_data['email']}
+        Phone: {membership_data['phone']}
+        Address: {membership_data['address']}
+        Place: {membership_data['place']}
+        Membership Type: {membership_data['membership_type']}
+        
+        Children Information:
+        """
+        
+        if membership_data['children']:
+            for i, child in enumerate(membership_data['children'], 1):
+                body += f"""
+        Child {i}:
+          Name: {child['name']}
+          Date of Birth: {child.get('date_of_birth', 'N/A')}
+          Sex: {child.get('sex', 'N/A')}
+                """
+        else:
+            body += "\n        No children information provided."
+        
+        body += f"""
+        
+        Please review this application in the admin panel: http://your-domain.com/admin/memberships
+        
+        The complete application data has been saved to: {json_filepath}
+        """
+        
+        # Attach body to email
+        msg.attach(MIMEText(body, 'plain'))
+        
+        # Attach the JSON file
+        with open(json_filepath, "rb") as attachment:
+            part = MIMEBase('application', 'octet-stream')
+            part.set_payload(attachment.read())
+        
+        encoders.encode_base64(part)
+        part.add_header(
+            'Content-Disposition',
+            f'attachment; filename= {os.path.basename(json_filepath)}',
+        )
+        msg.attach(part)
+        
+        # Create SMTP session
+        server = smtplib.SMTP(EMAIL_CONFIG['smtp_server'], EMAIL_CONFIG['smtp_port'])
+        server.starttls()  # Enable security
+        server.login(EMAIL_CONFIG['sender_email'], EMAIL_CONFIG['sender_password'])
+        
+        # Send email
+        text = msg.as_string()
+        server.sendmail(EMAIL_CONFIG['sender_email'], EMAIL_CONFIG['admin_email'], text)
+        server.quit()
+        
+        return True
+        
+    except Exception as e:
+        print(f"Error sending email: {str(e)}")
+        return False
+
+def send_confirmation_email(membership_data):
+    """
+    Send confirmation email to the member who submitted the application
+    """
+    try:
+        msg = MIMEMultipart()
+        msg['From'] = EMAIL_CONFIG['sender_email']
+        msg['To'] = membership_data['email']
+        msg['Subject'] = "KALAA Membership Application - Confirmation"
+        
+        membership_types = {
+            'annual_individual': 'Annual Individual Membership - $5',
+            'lifetime_individual': 'Lifetime Individual Membership - $50',
+            'lifetime_family': 'Lifetime Family Membership - $100'
+        }
+        
+        body = f"""
+        Dear {membership_data['name']},
+        
+        Thank you for your interest in joining the KALAA community!
+        
+        We have successfully received your membership application with the following details:
+        
+        Application Details:
+        - Name: {membership_data['name']}
+        - Email: {membership_data['email']}
+        - Phone: {membership_data['phone']}
+        - Membership Type: {membership_types.get(membership_data['membership_type'], 'Unknown')}
+        - Submission Date: {membership_data['submission_date']}
+        
+        What's Next?
+        ============
+        1. Our team will review your application
+        2. You will receive payment instructions via email
+        3. Once payment is confirmed, your membership will be activated
+        
+        If you have any questions, please don't hesitate to contact us.
+        
+        Best regards,
+        KALAA Community Team
+        
+        ---
+        This is an automated message. Please do not reply to this email.
+        """
+        
+        msg.attach(MIMEText(body, 'plain'))
+        
+        server = smtplib.SMTP(EMAIL_CONFIG['smtp_server'], EMAIL_CONFIG['smtp_port'])
+        server.starttls()
+        server.login(EMAIL_CONFIG['sender_email'], EMAIL_CONFIG['sender_password'])
+        
+        text = msg.as_string()
+        server.sendmail(EMAIL_CONFIG['sender_email'], membership_data['email'], text)
+        server.quit()
+        
+        return True
+        
+    except Exception as e:
+        print(f"Error sending confirmation email: {str(e)}")
+        return False
 
 @app.route('/')
 def index():
@@ -55,7 +207,27 @@ def submit_membership():
         with open(filepath, 'w') as f:
             json.dump(membership_data, f, indent=4)
         
-        return jsonify({'success': True, 'message': 'Your membership request has been sent to the association successfully!'})
+        # Send email notifications
+        email_success = True
+        confirmation_success = True
+        
+        # Send notification to admin
+        if not send_email_notification(membership_data, filepath):
+            email_success = False
+        
+        # Send confirmation to member
+        if not send_confirmation_email(membership_data):
+            confirmation_success = False
+        
+        # Prepare response message
+        if email_success and confirmation_success:
+            message = 'Your membership request has been sent successfully! You will receive a confirmation email shortly.'
+        elif email_success:
+            message = 'Your membership request has been sent successfully! However, we could not send you a confirmation email.'
+        else:
+            message = 'Your membership request has been saved, but there was an issue sending email notifications. Our team will contact you soon.'
+        
+        return jsonify({'success': True, 'message': message})
     
     except Exception as e:
         return jsonify({'success': False, 'message': f'An error occurred: {str(e)}'})
@@ -70,6 +242,9 @@ def admin_memberships():
             with open(filepath, 'r') as f:
                 data = json.load(f)
                 memberships.append(data)
+    
+    # Sort by submission date (newest first)
+    memberships.sort(key=lambda x: x.get('submission_date', ''), reverse=True)
     
     # Create a simple HTML page for admin
     html_content = """

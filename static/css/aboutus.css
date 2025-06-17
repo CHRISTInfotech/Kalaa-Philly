@@ -39,11 +39,13 @@
             margin-top: 2%;
             position: relative;
             height: 50vh;
-            background: url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2832&q=80') center center / cover no-repeat;
+            background: url('/static/images/group.png') center center / cover no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
+            opacity: 60%;
+            padding: 100px 0;
         }
 
         .hero-section::before {
