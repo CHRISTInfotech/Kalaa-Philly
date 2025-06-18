@@ -1,45 +1,8 @@
- .header .navbar-nav .nav-link {
-            color: rgb(0, 0, 0);
-        }
-
-        .header .navbar-brand {
-            color: rgb(0, 0, 0);
-            flex: -1;
-        }
-
-        .navbar-nav .nav-link {
-            margin: 0 10px;
-        }
-
-        .navbar-brand {
-            margin-right: 2px;
-        }
-
-        .navbar-toggler {
-            margin-left: 10px;
-        }
-
-        .header .nav {
-            color: rgb(0, 0, 0);
-        }
-
-        .header .navbar-nav .nav-link[href="index.html"] {
-            color: rgb(0, 0, 0);
-        }
-
-        .header .navbar-nav .nav-link[href="index.html"]:hover {
-            color: rgb(0, 0, 0);
-        }
-
-        .header .navbar-toggler-icon {
-            background-color: rgb(0, 0, 0);
-        }
-
-        .hero-section {
+.hero-section {
             margin-top: 2%;
             position: relative;
             height: 50vh;
-            background: url('/static/images/group.png') center center / cover no-repeat;
+            background: url('../images/group.png') center center / cover no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -97,6 +60,7 @@
             padding: 100px 0;
             background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
             position: relative;
+            margin-bottom: 20px;
         }
 
         .about-section::before {

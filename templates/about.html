@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+
+
+{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section text-center py-5 bg-light">
+    <div class="container">
+        <h1 class="display-4 fw-bold">About Us</h1>
+    </div>
+</section>
+
+<!-- About Section -->
+<section class="about-section py-5">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <!-- Image -->
+            <div class="col-lg-6 fade-in">
+                <img src="{{ url_for('static', filename='images/group.png') }}"  class="img-fluid rounded shadow" alt="Our Team" loading="lazy" alt="Our Team">
+            </div>
+
+            <!-- Text -->
+            <div class="col-lg-6 fade-in">
+                <h2 class="fw-bold mb-3">Who We Are</h2>
+                <p>
+                    Kalā Philly Association is a community-driven group committed to celebrating
+                    cultural heritage, fostering creativity, and building strong connections among
+                    members.
+                </p>
+                <p>
+                    Our events, outreach programs, and artistic collaborations reflect our shared
+                    passion for culture, inclusivity, and service. We strive to inspire and unite
+                    through cultural expression and collective action.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Include Footer -->
+{% include "footer.html" %}
+
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.2,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Parallax effect
+        window.addEventListener('scroll', () => {
+            const hero = document.querySelector('.hero-section');
+            if (hero) {
+                hero.style.transform = `translateY(${window.pageYOffset * 0.5}px)`;
+            }
+        });
+    });
+</script>
+{% endblock %}

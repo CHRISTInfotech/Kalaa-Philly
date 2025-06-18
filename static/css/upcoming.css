@@ -1,0 +1,104 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: Arial, Helvetica, sans-serif;;
+    height:999px
+}
+
+
+
+.container h1{
+    text-align: center;
+    padding-top: 140px;
+  }
+ 
+img {
+    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+img:hover{
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.img img {
+    width: 10%; /* Adjust as needed */
+    margin: 10px; 
+}
+
+@media (max-width: 768px) {
+    .img img {
+        width: 45%; /* Adjust for smaller screens */
+    }
+}
+
+.content{
+    float: right;
+    position: absolute;
+    margin-left: 900px;
+}
+
+
+/* Style for event cards */
+
+.event-cards {
+    flex: 2;
+    width: 100px;
+    height: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    object-fit: cover;
+    margin-top: 55px;
+}
+
+/* Style for individual event card */
+
+.event-card {
+    width: calc(33.33% - 20px);
+    margin-bottom: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.event-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.event-card img {
+    width: 100%;
+    height: auto;
+}
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: scale(1.03); /* scales the whole card */
+  box-shadow: 0 0.8rem 1.5rem rgba(0, 0, 0, 0.2); /* shadow on hover */
+}
+
+/* Remove image-specific hover if you only want full card to animate */
+.card-img-top {
+  transition: transform 0.3s ease; /* prepare for any future effects */
+}
+
+  .modal-content {
+    border-radius: 1rem;
+  }
+  .modal-header {
+    border-bottom: none;
+  }
+  .modal-body p {
+    margin-bottom: 0.8rem;
+  }

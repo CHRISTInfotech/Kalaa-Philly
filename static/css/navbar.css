@@ -1,0 +1,84 @@
+/* Import Malayalam Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@700&display=swap');
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Navbar Base */
+.navbar {
+    background-color: white !important;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    justify-content: center;
+}
+
+.navbar-logo {
+    width: 130px;
+    height: auto;
+}
+
+.navbar-nav {
+    font-weight: 600;
+    gap: 10px;
+}
+
+.navbar-nav .nav-link {
+    color: #000;
+    transition: all 0.3s ease;
+    padding: 8px 12px;
+    border-radius: 5px;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    background-color: #fceabb;
+}
+
+/* Brand Name Typography */
+.navbar-brand span.fs-1 {
+    font-size: 2rem;
+    color: #000000;
+    font-weight: bold;
+    justify-content: center;
+}
+
+.navbar-toggler {
+    margin-left: 10px;
+}
+
+.navbar-toggler-icon {
+    background-color: black;
+}
+
+/* Dropdown fix */
+.dropdown-menu {
+    text-align: center;
+}
+
+
+/* Centered title container */
+.kalaa-title {
+    display: inline-block;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Malayalam text style */
+.kalaa-malayalam {
+    font-size: 2.5rem;
+    font-family: 'Noto Sans Malayalam', sans-serif;
+    color: #070707;
+    margin-right: 10px;
+}
+
+/* English text style */
+.kalaa-english {
+    font-size: 1.25rem;
+    font-family: 'Segoe UI', sans-serif;
+    color: #000;
+}
+
