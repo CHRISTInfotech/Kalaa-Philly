@@ -47,6 +47,8 @@
             text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
             margin: 0;
             animation: heroFadeIn 1.2s ease-out;
+            z-index: 3;
+            position: relative;
         }
 
         .main-content {

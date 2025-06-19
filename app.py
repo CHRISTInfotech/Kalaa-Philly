@@ -1,7 +1,10 @@
-from flask import Flask, render_template, request, redirect, jsonify
+from flask import Flask, render_template, request, redirect, flash, get_flashed_messages
 from flask_mail import Mail, Message
 
 app = Flask(__name__)
+
+# ✅ Secret key for flashing messages (required for session-based features like flash)
+app.secret_key = "secret-key-12345"  
 
 # --- Email Configuration ---
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
@@ -42,9 +45,33 @@ def past_events():
 @app.route("/contact", methods=["GET", "POST"])
 def contact():
     if request.method == "POST":
-        # handle contact form submission (you can add Flask-Mail here too if needed)
+        from_name = request.form.get("from_name")
+        email = request.form.get("email")
+        message_text = request.form.get("message")
+
+        message_body = f"""
+        New Contact Message
+
+        Name: {from_name}
+        Email: {email}
+        Message:
+        {message_text}
+        """
+
+        msg = Message(
+            subject="New Contact Message - KALAA",
+            recipients=["anjaly.anju7471@gmail.com"],
+            body=message_body
+        )
+        mail.send(msg)
+
+        # ✅ Flash success message
+        flash("Your message has been sent successfully!")
+
         return redirect("/contact")
+
     return render_template("contact.html")
+
 
 @app.route("/news")
 def news():

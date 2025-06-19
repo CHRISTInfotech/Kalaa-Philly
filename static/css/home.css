@@ -12,8 +12,8 @@ html, body {
     margin-top: 20px;
 }
 .carousel-item img {
-    object-fit:fill;
-    width: 200%;
+    object-fit:cover;
+    width: 100%;
 }
 
 .image-container {
