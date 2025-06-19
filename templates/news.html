@@ -3,7 +3,6 @@
 {% block extra_css %}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
-<link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='css/news.css') }}">
 
 
@@ -12,11 +11,11 @@
 
 {% block content %}
  <!-- Hero Section -->
-            <section class="hero-section" style="background: url('/static/images/group.png') center center / cover no-repeat;">
-    <div class="hero-content">
-          <h1 class="">Latest News</h1>
-    </div>
-</section>
+     <section class="hero-section justify-content-center">
+       <div class="hero-content text-center fw-bold">
+         <h1>Latest News</h1>
+       </div>
+     </section>
 
   <!-- News Section -->
   <section class="news-section">
