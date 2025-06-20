@@ -88,18 +88,34 @@ def membership():
         place = request.form.get('place')
         membership_type = request.form.get('membership_type')
 
-        # Compose the email content
-        message_body = f"""
-        New Membership Application Received
+        # Get child info lists
+        child_names = request.form.getlist('child_name[]')
+        child_dobs = request.form.getlist('child_dob[]')
+        child_genders = request.form.getlist('child_sex[]')
 
-        Name: {name}
-        Spouse Name: {spouse_name}
-        Email: {email}
-        Phone: {phone}
-        Address: {address}
-        Place: {place}
-        Membership Type: {membership_type}
-        """
+        # Combine child data into readable format
+        children_info = ""
+        for i in range(len(child_names)):
+            if child_names[i]:  # only include if name is provided
+                children_info += f"\n  - Name: {child_names[i]}, DOB: {child_dobs[i]}, Gender: {child_genders[i]}"
+
+        if not children_info:
+            children_info = "None"
+
+        # Compose email body
+        message_body = f"""
+New Membership Application Received
+
+Name: {name}
+Spouse Name: {spouse_name}
+Email: {email}
+Phone: {phone}
+Address: {address}
+Place: {place}
+Membership Type: {membership_type}
+
+Children Information:{children_info}
+"""
 
         # Send the email
         msg = Message(
@@ -109,13 +125,14 @@ def membership():
         )
         mail.send(msg)
 
-        # ✅ Print message to console
         print("✅ Membership form submitted by:", name)
         print("📧 Email sent to: anjaly.anju7471@gmail.com")
+        flash("✅ Membership Application submitted successfully. We'll contact you soon!")
 
         return redirect("/membership")
 
     return render_template("membership.html")
+
 
 
 if __name__ == "__main__":
